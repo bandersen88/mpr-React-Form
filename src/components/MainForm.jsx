@@ -13,7 +13,10 @@ class MainForm extends Component {
         age: '',
         city: '',
         country: '',
-        gender: 'female'
+        name: '',
+        email: '',
+        gender: '',
+        radioValue: ''
     }
 
     nextStep = () => {
@@ -33,17 +36,23 @@ class MainForm extends Component {
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
     }
+
+    handleRadioChange = (e, { value }) => this.setState({ radioValue: value });
+
+    handleDropDownChange = (e, { name, value }) => this.setState({ [name]: value });
     
     render(){
         const {step} = this.state;
-        const { firstName, lastName, description, age, city, country, gender } = this.state;
-        const values = { firstName, lastName, description, age, city, country, gender };
+        const { firstName, lastName, description, age, city, country, name, email, gender, radioValue  } = this.state;
+        // const values = { firstName, lastName, description, age, city, country, gender };
+        const values = { name, email, gender, radioValue };
         switch(step) {
         case 1:
             return <Step1 
                     nextStep={this.nextStep} 
                     handleChange = {this.handleChange}
                     handleDropDownChange = {this.handleDropDownChange}
+                    handleRadioChange = {this.handleRadioChange}
                     values={values}
                     />
         case 2:

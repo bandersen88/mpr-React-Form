@@ -8,10 +8,10 @@ const options = [
 ];
 
 class Step1 extends Component {
-  state = { name: "", email: "", gender: "", radioValue: "that" };
-  handleRadioChange = (e, { value }) => this.setState({ radioValue: value });
+//   state = { name: "", email: "", gender: "", radioValue: "that" };
+//   handleRadioChange = (e, { value }) => this.setState({ radioValue: value });
 
-  handleChange = (e, { name, value }) => this.setState({ [name]: value });
+//   handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
   saveAndContinue = e => {
     e.preventDefault();
@@ -19,55 +19,55 @@ class Step1 extends Component {
   };
 
   render() {
-    const { name, email, gender, radioValue } = this.state;
+    // const { name, email, gender, radioValue } = this.state;
     const { values } = this.props;
     console.log("Values: ", values);
     return (
       <Form color="green">
         <h1 className="ui centered">Story Description</h1>
-        {/* <Form.Field>
+        <Form.Field>
           <label>First Name</label>
           <input
             placeholder="First Name"
             onChange={this.props.handleChange("firstName")}
             defaultValue={values.firstName}
           />
-        </Form.Field> */}
+        </Form.Field>
         <Form.Field>
           <Select
             label="Gender"
             options={options}
             placeholder="Gender"
             name="gender"
-            value={gender}
-            onChange={this.handleChange}
+            value={values.gender}
+            onChange={this.props.handleDropDownChange}
           />
         </Form.Field>
         <Form.Group>
           <Form.Input
             placeholder="Name"
             name="name"
-            value={name}
-            onChange={this.handleChange}
+            value={values.name}
+            onChange={this.props.handleDropDownChange}
           />
           <Form.Input
             placeholder="Email"
             name="email"
-            value={email}
-            onChange={this.handleChange}
+            value={values.email}
+            onChange={this.props.handleDropDownChange}
           />
           <Form.Button content="Submit" />
         </Form.Group>
         <Form.Field>
-          Selected value: <b>{radioValue}</b>
+          Selected value: <b>{values.radioValue}</b>
         </Form.Field>
         <Form.Field>
           <Radio
             label="Choose this"
             name="radioGroup"
             value="this"
-            checked={radioValue === "this"}
-            onChange={this.handleRadioChange}
+            checked={values.radioValue === "this"}
+            onChange={this.props.handleRadioChange}
           />
         </Form.Field>
         <Form.Field>
@@ -75,8 +75,8 @@ class Step1 extends Component {
             label="Or that"
             name="radioGroup"
             value="that"
-            checked={radioValue === "that"}
-            onChange={this.handleRadioChange}
+            checked={values.radioValue === "that"}
+            onChange={this.props.handleRadioChange}
           />
         </Form.Field>
         {/* <Form.Field>
