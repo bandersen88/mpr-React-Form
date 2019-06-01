@@ -13,7 +13,7 @@ class Confirmation extends Component{
     }
 
     render(){
-        const {values: { firstName, lastName, description, age, city, country, gender }} = this.props;
+        const {values: { description, beats, goals, audience, hypothesis, lifecycle, topicType, format }} = this.props;
 
         return(
             <div>
@@ -22,31 +22,37 @@ class Confirmation extends Component{
                 <List>
                     <List.Item>
                         <List.Icon name='users' />
-                        <List.Content>First Name: {firstName}</List.Content>
+                        <List.Content>Description: {description}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='users' />
-                        <List.Content>Last Name: {lastName}</List.Content>
+                        <List.Content>Last Name: {beats}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            Description: {description}
+                            Description: {goals}
                         </List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            Gender: {gender}
+                            Gender: {audience}
                         </List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='calendar' />
-                        <List.Content>{age} Years</List.Content>
+                        <List.Content>{hypothesis} Years</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='marker' />
-                        <List.Content>{city}, {country}</List.Content>
+                        <List.Content>{lifecycle}, {topicType}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Icon name='mail' />
+                        <List.Content>
+                            Gender: {format}
+                        </List.Content>
                     </List.Item>
                 </List>
 
@@ -58,3 +64,5 @@ class Confirmation extends Component{
 }
 
 export default Confirmation;
+
+

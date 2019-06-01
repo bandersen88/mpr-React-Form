@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import {
-  Form,
-  Button,
-  Radio,
-  Select,
-  TextArea,
-  Checkbox
-} from "semantic-ui-react";
+import { Form, Button, Checkbox, Radio } from "semantic-ui-react";
 
-class Step1 extends Component {
+class Step2 extends Component {
   saveAndContinue = e => {
     e.preventDefault();
     this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
   };
 
   render() {
@@ -19,38 +17,11 @@ class Step1 extends Component {
 
     return (
       <Form color="green">
-        <h1 className="ui centered">Step 1</h1>
+        <h1 className="ui centered">Step 2</h1>
+        <Button onClick={this.back}>Back</Button>
         <Button onClick={this.saveAndContinue}>Save And Continue </Button>
-        <Form.Field
-          style={{ minHeight: 300 }}
-          control={TextArea}
-          label="Story Description"
-          placeholder="Tell us a bit about the story idea..."
-          value={values.description}
-          onChange={this.props.handleChange("description")}
-        />
-        {/* <Form.Field>
-          <label>First Name</label>
-          <input
-            placeholder="First Name"
-            onChange={this.props.handleChange("firstName")}
-            defaultValue={values.firstName}
-          />
-        </Form.Field> */}
-        {/* <Form.Field>
-          <Select
-            label="Gender"
-            options={options}
-            placeholder="Gender"
-            name="gender"
-            value={values.gender}
-            onChange={this.props.handleDropDownChange}
-          />
-        </Form.Field> */}
-
-        {/* <Form.Field>
+        <Form.Field>
           <h5>What Beat is this Story in?</h5>
-          Selected value: <b>{values.radioValue}</b>
         </Form.Field>
         <Form.Field>
           <Checkbox
@@ -219,61 +190,12 @@ class Step1 extends Component {
             checked={values.beats.includes("Sports")}
             onChange={this.props.handleCheckBoxGroupChange}
           />
-        </Form.Field> */}
+        </Form.Field>
 
-        {/* <Form.Group>
-          <Form.Input
-            placeholder="Name"
-            name="name"
-            value={values.name}
-            onChange={this.props.handleDropDownChange}
-          />
-          <Form.Input
-            placeholder="Email"
-            name="email"
-            value={values.email}
-            onChange={this.props.handleDropDownChange}
-          />
-          <Form.Button content="Submit" />
-        </Form.Group>
-        <Form.Field>
-          Selected value: <b>{values.radioValue}</b>
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="Choose this"
-            name="radioGroup"
-            value="this"
-            checked={values.radioValue === "this"}
-            onChange={this.props.handleRadioChange}
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="Or that"
-            name="radioGroup"
-            value="that"
-            checked={values.radioValue === "that"}
-            onChange={this.props.handleRadioChange}
-          />
-        </Form.Field> */}
-        {/* <Form.Field>
-          <label>Last Name</label>
-          <input
-            placeholder="Last Name"
-            onChange={this.props.handleChange("lastName")}
-            defaultValue={values.lastName}
-          />
-        </Form.Field>
-        <Form.TextArea
-          label="Tell us a bit about the story idea"
-          placeholder="Text here..."
-          onChange={this.props.handleChange("description")}
-          defaultValue={values.description}
-        /> */}
+        
       </Form>
     );
   }
 }
 
-export default Step1;
+export default Step2;
