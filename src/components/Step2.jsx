@@ -20,8 +20,9 @@ class Step2 extends Component {
         <h1 className="ui centered">Step 2</h1>
         <Button onClick={this.back}>Back</Button>
         <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+        <h5>What Beat is this Story in?</h5>
         <Form.Field>
-          <h5>What Beat is this Story in?</h5>
+          
         </Form.Field>
         <Form.Field>
           <Checkbox

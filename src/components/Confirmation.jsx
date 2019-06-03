@@ -26,32 +26,36 @@ class Confirmation extends Component{
                     </List.Item>
                     <List.Item>
                         <List.Icon name='users' />
-                        <List.Content>Last Name: {beats}</List.Content>
+                        <List.Content>Beats: {beats}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            Description: {goals}
+                            Goals: {goals}
                         </List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            Gender: {audience}
+                            Audience: {audience}
                         </List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='calendar' />
-                        <List.Content>{hypothesis} Years</List.Content>
+                        <List.Content>Hypothesis {hypothesis}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Icon name='calendar' />
+                        <List.Content>Lifecycle {lifecycle}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='marker' />
-                        <List.Content>{lifecycle}, {topicType}</List.Content>
+                        <List.Content>TopicType {topicType}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            Gender: {format}
+                            Format: {format}
                         </List.Content>
                     </List.Item>
                 </List>
